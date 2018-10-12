@@ -20,9 +20,8 @@ console.log("Win condition: " + winner);
 // Begin game
 document.addEventListener('keyup', function(event) {
     // Gets input from the keyboard
-    var key = event.keyCode.toString();
-    var input = String.fromCharCode(key).toLowerCase();
-    console.log(input);
+    var input = String.fromCharCode(event.keyCode).toLowerCase();
+    console.log("Current guess: " + input);
 
     // Checks if the input is a letter and hasn't been repeated
     if((letters.indexOf(input) >= 0) && (attempts.indexOf(input) < 0)) {
