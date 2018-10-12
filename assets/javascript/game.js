@@ -55,6 +55,5 @@ document.addEventListener('keyup', function(event) {
         // Updates the number of guesses and the attempts
         document.getElementById("guess").innerHTML = guesses;
         document.getElementById("attempt").innerHTML = attempts;
-
     }
 });
