@@ -15,13 +15,11 @@ var losses = 0;
 var guesses = totalGuesses = 9;
 var attempts = [];
 var winner = getRandomLetter();
-console.log("Win condition: " + winner);
 
 // Begin game
 document.addEventListener('keyup', function(event) {
     // Gets input from the keyboard
-    var input = String.fromCharCode(event.keyCode).toLowerCase();
-    console.log("Current guess: " + input);
+    var input = event.key.toLowerCase();
 
     // Checks if the input is a letter and hasn't been repeated
     if((letters.indexOf(input) >= 0) && (attempts.indexOf(input) < 0)) {
@@ -35,21 +33,18 @@ document.addEventListener('keyup', function(event) {
             if(winner == input) {
                 wins++;
                 document.getElementById("win").innerHTML = wins;
-                console.log("Player wins");
             } 
             
             // Loss count updates
             else {
                 losses++;
                 document.getElementById("lose").innerHTML = losses;
-                console.log("Player loses");
             }
 
             // Resets the guesses, attempts, and gets a new letter.
             guesses = totalGuesses;
             attempts = [];
             winner = getRandomLetter();
-            console.log("Win condition: " + winner);
         }
 
         // Updates the number of guesses and the attempts
